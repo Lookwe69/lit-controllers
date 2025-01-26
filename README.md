@@ -17,9 +17,10 @@ npm i @lookwe/lit-controllers
 The `EffectController` runs a callback function whenever the specified dependencies change. You can control whether the effect runs before or after the render with the `strategy` option.
 
 ```ts
-import { EffectController } from '@lookwe/lit-controllers';
 import { html, LitElement } from 'lit';
 import { state } from 'lit/decorator.js';
+
+import { EffectController } from '@lookwe/lit-controllers';
 
 class MyElement extends LitElement {
 	@state() accessor #count = 0;
@@ -61,9 +62,10 @@ Parameters:
 The `EffectGroupController` manages multiple `EffectController` instances, grouping them together based on shared dependencies. You can add or remove all controllers at once from the host element.
 
 ```ts
-import { effect, EffectGroupController } from '@lookwe/lit-controllers';
 import { html, LitElement } from 'lit';
 import { state } from 'lit/decorator.js';
+
+import { effect, EffectGroupController } from '@lookwe/lit-controllers';
 
 class MyElement extends LitElement {
 	@state() accessor #count = 0;
@@ -119,9 +121,10 @@ Methods :
 The `MemoController` memoizes the result of a callback function based on its dependencies. It prevents unnecessary re-evaluations when dependencies haven't changed.
 
 ```ts
-import { MemoController } from '@lookwe/lit-controllers';
 import { html, LitElement } from 'lit';
 import { state } from 'lit/decorator.js';
+
+import { MemoController } from '@lookwe/lit-controllers';
 
 class MyElement extends LitElement {
 	@state() accessor #count = 0;
