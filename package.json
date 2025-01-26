@@ -9,7 +9,9 @@
 		"lui controller",
 		"web-components controller",
 		"typescript",
-		"lit controller"
+		"lit controller",
+		"lit effect",
+		"lit memo"
 	],
 	"author": "Lookwe",
 	"version": "0.0.0-development",
