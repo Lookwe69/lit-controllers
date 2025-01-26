@@ -54,7 +54,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@lookwe/utils": "^1.0.2",
+		"@lookwe/utils": "^1.1.0",
 		"lit": "^3.2.1",
 		"tslib": "^2.8.0"
 	},
