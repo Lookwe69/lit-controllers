@@ -45,7 +45,8 @@
 	"exports": {
 		".": "./index.js",
 		"./effect": "./internal/effect-controller.js",
-		"./effect-group": "./internal/effect-group-controller.js"
+		"./effect-group": "./internal/effect-group-controller.js",
+		"./memo": "./internal/memo-controller.js"
 	},
 	"publishConfig": {
 		"access": "public"
