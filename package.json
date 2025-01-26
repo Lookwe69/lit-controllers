@@ -44,8 +44,8 @@
 	"types": "index.d.ts",
 	"exports": {
 		".": "./index.js",
-		"./effect-controller": "./internal/effect-controller.js",
-		"./effect-group-controller": "./internal/effect-group-controller.js"
+		"./effect": "./internal/effect-controller.js",
+		"./effect-group": "./internal/effect-group-controller.js"
 	},
 	"publishConfig": {
 		"access": "public"
