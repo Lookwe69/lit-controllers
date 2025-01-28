@@ -28,7 +28,8 @@ class MyElement extends LitElement {
 	// EffectController: Executes the effect when `count` changes
 	#_effectController = new EffectController(
 		this,
-		([count], [previousCount]) => {
+		([count], prevDeps) => {
+			const [previousCount] = prevDeps ?? [];
 			console.log('Effect triggered!');
 			console.log('Current count:', count);
 			console.log('Previous count:', previousCount);
