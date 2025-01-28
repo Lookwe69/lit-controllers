@@ -1,6 +1,6 @@
 {
 	"name": "@lookwe/lit-controllers",
-	"description": "Some lit controllers",
+	"description": "Controllers to simplify Lit lifecycle and more",
 	"homepage": "https://github.com/Lookwe69/lit-controllers",
 	"bugs": {
 		"url": "https://github.com/Lookwe69/lit-controllers/issues"
