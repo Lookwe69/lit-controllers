@@ -48,7 +48,8 @@
 		".": "./index.js",
 		"./effect": "./internal/effect-controller.js",
 		"./effect-group": "./internal/effect-group-controller.js",
-		"./memo": "./internal/memo-controller.js"
+		"./memo": "./internal/memo-controller.js",
+		"./slot": "./internal/slot-controller.js"
 	},
 	"publishConfig": {
 		"access": "public"

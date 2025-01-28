@@ -1,6 +1,6 @@
 # lit-controllers
 
-A collection of Lit.js reactive controllers for managing side effects, effect groups, and memoization in your Lit-based applications.
+A collection of Lit.js reactive controllers for managing side effects, effect groups, memoization and slotted content in your Lit-based applications.
 
 ## Installation
 
@@ -55,7 +55,7 @@ Parameters:
 
 - `callback`: The function called with the current and previous dependencies.
 - `deps`: A function that returns an array of dependencies.
-- `options`: Optional. Set the strategy to "update" (before the render) or "updated" (after the render).
+- `options` (optional): Set the strategy to "update" (before the render) or "updated" (after the render).
 
 ### EffectGroupController
 
@@ -162,3 +162,38 @@ Methods:
 
 - `value`: Returns the memoized value.
 - `getValue(forceCheckDeps = false)`: Returns the memoized value, optionally forcing a re-evaluation of the dependencies.
+
+### SlotController
+
+The `SlotController` manages slotted content and updates its host element when the slotted content changes. It provides helper methods for checking and retrieving assigned slot content.
+
+```ts
+import { html, LitElement } from 'lit';
+
+import { SlotController } from '@lookwe/lit-controllers';
+
+class MyElement extends LitElement {
+	#slotController = new SlotController(this); // Manages all slots
+
+	render() {
+		return html`
+			<slot></slot>
+			<slot name="named"></slot>
+			<p>Default slot has content: ${this.#slotController.hasAssignedNodes() ? 'Yes' : 'No'}</p>
+			<p>Named slot has content: ${this.#slotController.hasAssignedNodes('named') ? 'Yes' : 'No'}</p>
+		`;
+	}
+}
+customElements.define('my-element', MyElement);
+```
+
+Parameters:
+
+- `slotNames` (optional): An iterable of slot names to manage. If not provided, all slots are managed.
+
+Methods:
+
+- `getAssignedNodes(slotName?: string)`: Gets an array of assigned nodes for the specified slot.
+- `getAssignedElements(slotName?: string)`: Gets an array of assigned elements for the specified slot.
+- `hasAssignedNodes(slotName?: string)`: Checks if the specified slot has any assigned nodes.
+- `hasAssignedElements(slotName?: string)`: Checks if the specified slot has any assigned elements.
