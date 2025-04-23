@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
 
-import { SlotController } from './slot-controller';
+import { SlotController } from './slot-controller.js';
 
 @customElement('reactive-controller-host')
 class ReactiveControllerHostElement extends LitElement {
@@ -36,13 +36,13 @@ describe('SlotController', () => {
 		const assignedElements = slotController.getAssignedElements();
 		expect(slotController.hasAssignedElements()).equal(true);
 		expect(assignedElements).length(1);
-		expect(assignedElements![0].textContent).equal('Test Element');
+		expect(assignedElements![0]!.textContent).equal('Test Element');
 
 		const assignedNodes = slotController.getAssignedNodes();
 		expect(slotController.hasAssignedNodes()).equal(true);
 		expect(assignedNodes).length(2);
-		expect(assignedNodes![0].textContent).equal('Test Element');
-		expect(assignedNodes![1].textContent).equal('Test Node');
+		expect(assignedNodes![0]!.textContent).equal('Test Element');
+		expect(assignedNodes![1]!.textContent).equal('Test Node');
 	});
 
 	it('correctly identifies assigned elements / nodes in a named slot', async () => {
@@ -57,12 +57,12 @@ describe('SlotController', () => {
 		const assignedElements = slotController.getAssignedElements('named-slot');
 		expect(slotController.hasAssignedElements('named-slot')).equal(true);
 		expect(assignedElements).length(1);
-		expect(assignedElements![0].textContent).equal('Named Test Element');
+		expect(assignedElements![0]!.textContent).equal('Named Test Element');
 
 		const assignedNodes = slotController.getAssignedElements('named-slot');
 		expect(slotController.hasAssignedNodes('named-slot')).equal(true);
 		expect(assignedNodes).length(1);
-		expect(assignedNodes![0].textContent).equal('Named Test Element');
+		expect(assignedNodes![0]!.textContent).equal('Named Test Element');
 	});
 
 	it('trigger update for observed slot', async () => {

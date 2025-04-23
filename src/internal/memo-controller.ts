@@ -1,6 +1,6 @@
 import { ReactiveController, ReactiveControllerHost } from 'lit';
 
-import { shallowArrayEquals } from '@lookwe/utils';
+import { shallowArrayEquals } from '@lookwe/utils/array';
 
 /**
  * A reactive controller that memoizes the result of a callback function based on its dependencies.

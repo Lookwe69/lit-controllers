@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
 
-import { MemoController } from './memo-controller';
+import { MemoController } from './memo-controller.js';
 
 @customElement('reactive-controller-host')
 class ReactiveControllerHostElement extends LitElement {
