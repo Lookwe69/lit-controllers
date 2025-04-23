@@ -4,8 +4,8 @@ import { customElement, property } from 'lit/decorators.js';
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
 
-import { EffectController } from './effect-controller';
-import { effect, EffectGroupController } from './effect-group-controller';
+import { EffectController } from './effect-controller.js';
+import { effect, EffectGroupController } from './effect-group-controller.js';
 
 @customElement('reactive-controller-host')
 class ReactiveControllerHostElement extends LitElement {

@@ -1,6 +1,6 @@
 import { ReactiveControllerHost } from 'lit';
 
-import { ArrayOneOrMore } from '@lookwe/utils';
+import { ArrayOneOrMore } from '@lookwe/utils/types';
 
 import { EffectController, EffectControllerOptions } from './effect-controller.js';
 
