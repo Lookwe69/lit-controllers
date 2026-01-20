@@ -10,9 +10,9 @@ on:
 jobs:
     lint:
         runs-on: ubuntu-latest
-        container: node:22
+        container: node:24
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
 
             - run: npm i
             - run: npm run lint
@@ -20,14 +20,14 @@ jobs:
 
     playwright:
         runs-on: ubuntu-latest
-        container: mcr.microsoft.com/playwright:v1.52.0
+        container: mcr.microsoft.com/playwright:v1.54.1
         env:
             HOME: /root
         permissions:
             contents: read
             pull-requests: write
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
 
             - run: npm i
             - run: npm run test:coverage
