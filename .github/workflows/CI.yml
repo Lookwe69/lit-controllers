@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         container: node:24
         steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@v7
 
             - run: npm i
             - run: npm run lint
@@ -27,7 +27,7 @@ jobs:
             contents: read
             pull-requests: write
         steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@v7
 
             - run: npm i
             - run: npm run test:coverage
@@ -46,7 +46,7 @@ jobs:
                   thresholds: '60 80'
 
             - name: Add Coverage PR Comment
-              uses: marocchino/sticky-pull-request-comment@v2
+              uses: marocchino/sticky-pull-request-comment@v3.0.5
               if: github.event_name == 'pull_request'
               with:
                   recreate: true
